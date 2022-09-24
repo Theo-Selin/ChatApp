@@ -33,6 +33,8 @@
 .App-row {
   display: flex;
   flex-direction: row;
+  border: 1px solid white;
+  padding: 10%;
 }
 
 .App-link {
