@@ -3,15 +3,15 @@ import Message from "@chatapp/shared";
 import axios from "axios";
 import Send from "./Send";
 
-axios.defaults.baseURL = process.env.REACT_APP_MESSAGE_API || "http://localhost:3001";
+axios.defaults.baseURL =
+  process.env.REACT_APP_MESSAGE_API || "http://localhost:3001";
 
 const fetchMessages = async (): Promise<Message[]> => {
-    const response = await axios.get<Message[]>("/messages");
-    return response.data;
-  };
+  const response = await axios.get<Message[]>("/messages");
+  return response.data;
+};
 
 const Messages = () => {
-  const [messageText, setMessageText] = useState<string>("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [error, setError] = useState<string | undefined>();
 
@@ -41,6 +41,7 @@ const Messages = () => {
   };
   return (
     <div className="Container">
+      Messages
       <div className="Messages">{output()}</div>
       <Send />
     </div>
