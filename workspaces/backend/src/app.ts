@@ -19,7 +19,6 @@ app.post("/messages", (req: Request<Message>, res: Response<Message[]>) => {
     message.id = crypto.randomUUID()
     console.log("New message created:", message)
     MESSAGES.push(message)
-    res.sendStatus(201)
     res.send(MESSAGES)
 })
 
