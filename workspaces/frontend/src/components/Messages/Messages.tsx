@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Message from "@chatapp/shared";
+import styled from "styled-components"
 import axios from "axios";
 import Send from "./Send";
+
+const Container = styled.div`
+  border: 1px solid grey;
+  height: 80vh;
+  width: 100%;
+`
 
 axios.defaults.baseURL =
   process.env.REACT_APP_MESSAGE_API || "http://localhost:3001";
@@ -40,11 +47,11 @@ const Messages = () => {
     }
   };
   return (
-    <div className="Container">
+    <Container className="messageContainer">
       Messages
       <div className="Messages">{output()}</div>
       <Send />
-    </div>
+    </Container>
   );
 };
 

@@ -1,7 +1,6 @@
 import Message from "@chatapp/shared";
 import axios from "axios";
 import React, {useState} from "react";
-import Messages from "./Messages";
 
 const Send = () => {
   const [messageText, setMessageText] = useState<string>("");
