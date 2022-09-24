@@ -1,7 +1,10 @@
-import express, { Application, json, Request, Response } from 'express'
-import Message from '@chatapp/shared'
+import express, { Application, json, Request, Response } from "express"
+import Message from "@chatapp/shared"
 import crypto from "crypto"
-import cors from 'cors'
+import cors from "cors"
+import dotenv from "dotenv"
+
+dotenv.config()
 
 const app: Application = express()
 app.use(cors())
@@ -10,7 +13,7 @@ const port: number = parseInt(process.env.SERVER_PORT || "3001")
 
 const MESSAGES: Message[] = [{ id: crypto.randomUUID(), text: "Hej", timeStamp: new Date() }]
 
-app.get('/messages', (req: Request, res: Response<Message[]>) => {
+app.get("/messages", (req: Request, res: Response<Message[]>) => {
     res.send(MESSAGES)
 })
 

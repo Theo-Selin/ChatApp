@@ -3,7 +3,7 @@ import Message from "@chatapp/shared";
 import "./App.css";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = process.env.REACT_APP_MESSAGE_API || "http://localhost:3001";
 const fetchMessages = async (): Promise<Message[]> => {
   const response = await axios.get<Message[]>("/messages");
   return response.data;
