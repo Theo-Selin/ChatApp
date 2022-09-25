@@ -2,9 +2,12 @@ import Message from "@chatapp/shared";
 import axios from "axios";
 import React, {useState} from "react";
 
-const Send = () => {
-  const [messageText, setMessageText] = useState<string>("");
-  const [messages, setMessages] = useState<Message[]>([]);
+type Props = {
+  setMessages: React.Dispatch<React.SetStateAction<Message[]>>
+}
+
+const Send: React.FC<Props> = ({ setMessages }) => {
+  const [messageText, setMessageText] = useState("")
 
   const createMessage = (messageText: string): void => {
     const message: Message = {

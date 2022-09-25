@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Message from "@chatapp/shared";
 import styled from "styled-components"
-import axios from "axios";
 import Send from "./Send";
+import { fetchMessages } from "./utils";
 
 const Container = styled.div`
   border: 1px solid grey;
@@ -10,25 +10,17 @@ const Container = styled.div`
   width: 100%;
 `
 
-axios.defaults.baseURL =
-  process.env.REACT_APP_MESSAGE_API || "http://localhost:3001";
-
-const fetchMessages = async (): Promise<Message[]> => {
-  const response = await axios.get<Message[]>("/messages");
-  return response.data;
-};
-
-const Messages = () => {
+const Messages: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [error, setError] = useState<string | undefined>();
 
   useEffect(() => {
-    fetchMessages()
-      .then(setMessages)
-      .catch((error) => {
-        setMessages([]);
-        setError("Error fetching messages");
-      });
+      fetchMessages()
+          .then(setMessages)
+          .catch((error) => {
+              setMessages([]);
+              setError("Error fetching messages");
+          });
   }, []);
 
   const output = () => {
@@ -46,11 +38,12 @@ const Messages = () => {
       return <div>"Waiting for messages..."</div>;
     }
   };
+
   return (
     <Container className="messageContainer">
       Messages
       <div className="Messages">{output()}</div>
-      <Send />
+      <Send setMessages={setMessages}/>
     </Container>
   );
 };
