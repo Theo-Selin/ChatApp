@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Container = styled.div`
   position: fixed;
   width: 500px;
-  height: 200px;
+  height: 100px;
   left: 50%;
   margin-left: -250px;
 `;

@@ -1,6 +1,6 @@
 import "./App.css";
 import Contacts from "./components/Contacts/Contacts";
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
 import Messages from "./components/Messages/Messages";
 import Navigation from "./components/Navigation/Navigation";
 

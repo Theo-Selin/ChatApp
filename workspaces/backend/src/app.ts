@@ -11,7 +11,7 @@ app.use(cors())
 app.use(json())
 const port: number = parseInt(process.env.SERVER_PORT || "3001")
 
-const MESSAGES: Message[] = [{ id: crypto.randomUUID(), text: "Hej", timeStamp: new Date() }]
+const MESSAGES: Message[] = []
 
 app.get("/messages", (req: Request, res: Response<Message[]>) => {
     res.send(MESSAGES)

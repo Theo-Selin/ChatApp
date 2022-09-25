@@ -3,6 +3,10 @@
   background-color: #282c34;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -22,7 +26,7 @@
 .App-row {
   display: flex;
   flex-direction: row;
-  width: 50%;
+  width: 80%;
 }
 
 .App-link {
@@ -34,8 +38,13 @@
   overflow-y: scroll;
 }
 
-.Messages::-webkit-scrollbar {
-  display: none;
+.textInput {
+  position: fixed;
+  width: 500px;
+  height: 100px;
+  left: 50%;
+  bottom: 0;
+  margin-left: -250px;
 }
 
 @keyframes App-logo-spin {
