@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Message from "@chatapp/shared";
 import styled from "styled-components";
 import Send from "./Send";
-import { fetchMessages } from "./utils";
+import { delay, fetchMessages } from "./utils";
 import Bubble from "./Bubble";
 
 const Container = styled.div`
@@ -16,7 +16,6 @@ const Container = styled.div`
 const Messages: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [error, setError] = useState<string | undefined>();
-
   const bottomRef = useRef<null | HTMLDivElement>(null);
 
   useEffect(() => {

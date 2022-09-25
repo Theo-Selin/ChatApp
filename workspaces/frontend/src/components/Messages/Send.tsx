@@ -1,6 +1,7 @@
 import Message from "@chatapp/shared";
 import axios from "axios";
 import React, { useState } from "react";
+import { delay } from "./utils";
 
 type Props = {
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
@@ -14,10 +15,6 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const delay = (ms: number) => new Promise(
-    resolve => setTimeout(resolve, ms)
-  );
-
   const createMessage = (messageText: string): void => {
     const message: Message = {
       text: messageText,
@@ -26,6 +23,7 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
     axios
       .post<Message[]>("/messages", message)
       .then((response) => setMessages(response.data))
+      setMessageText("")
       delay(100)
       .then(scrollDown)
   };
@@ -33,7 +31,7 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
   return (
     <div className="textInput">
       <section>
-        <input
+        <input id="writeField"
           type="text"
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
