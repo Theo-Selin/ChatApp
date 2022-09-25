@@ -38,14 +38,67 @@
   overflow-y: scroll;
 }
 
-.textInput {
-  position: fixed;
-  width: 500px;
-  height: 100px;
-  left: 50%;
-  bottom: 0;
-  margin-left: -250px;
+.message {
+  font-size: 18px;
 }
+
+.timeStamp {
+  font-size: 12px;
+}
+
+.messageBubble {
+  background-color: #282c34;
+  border: 1px solid gray;
+  border-radius: 20px;
+  margin: 50px;
+}
+
+.textContainer {
+  position: fixed;
+  width: 40%;
+  height: 20px;
+  left: 55%;
+  top: 87%;
+  margin-left: -25%;
+}
+
+.writeField {
+  background-color: rgb(23, 23, 28);
+  width: 100%;
+  display: flex;
+  font-size: 18px;
+}
+
+.textInput {
+  background-color: transparent;
+  margin: 0;
+  width: 80%;
+  padding-left: 20px;
+  padding-top: 20px;
+  resize: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	outline: inherit;
+}
+
+.sendButton {
+  width: 20%;
+  background: none;
+	color: inherit;
+	border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.sendButton:hover {
+  color: rgb(0, 255, 0);
+  background-color: rgba(0, 0, 0, 0.193);
+  transition: smooth;
+}
+
+
 
 @keyframes App-logo-spin {
   from {

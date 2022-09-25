@@ -29,14 +29,13 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
   };
   
   return (
-    <div className="textInput">
-      <section>
-        <input id="writeField"
-          type="text"
+    <div className="textContainer">
+      <section className="writeField">
+        <textarea className="textInput"
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
         />
-        <button onClick={(e) => createMessage(messageText)}>Send</button>
+        <button className="sendButton" onClick={(e) => createMessage(messageText)}>Send</button>
       </section>
     </div>
   );

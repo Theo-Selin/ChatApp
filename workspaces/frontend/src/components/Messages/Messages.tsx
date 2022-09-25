@@ -6,6 +6,7 @@ import { delay, fetchMessages } from "./utils";
 import Bubble from "./Bubble";
 
 const Container = styled.div`
+  background-color: rgb(33, 33, 41);
   overflow: scroll;
   border-left: 1px solid grey;
   border-right: 1px solid grey;
