@@ -33,6 +33,40 @@
   color: #61dafb;
 }
 
+.headerContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 5%;
+  height: 100%;
+}
+
+.navItems, .navOptions, .chatGroups {
+  list-style-type: none; 
+  font-size: 30px;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+a {
+  color: lightgray;
+}
+
+a:hover {
+  color: orange;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  left: 10px;
+  margin-right: 1%;
+}
+
 .Messages {
   height: 75vh;
   overflow-y: scroll;
@@ -49,22 +83,22 @@
 .messageBubble {
   background-color: #282c34;
   border: 1px solid gray;
-  border-radius: 20px;
-  margin: 50px;
+  border-radius: 5px;
+  margin: 10px;
 }
 
 .textContainer {
   position: fixed;
-  width: 40%;
-  height: 20px;
-  left: 55%;
-  top: 87%;
+  width: 44%;
+  left: 55.2%;
+  top: 91%;
   margin-left: -25%;
+  z-index: 1000;
 }
 
 .writeField {
-  background-color: rgb(23, 23, 28);
-  width: 100%;
+  background-color: #282c34;
+  width: 90%;
   display: flex;
   font-size: 18px;
 }
@@ -93,7 +127,7 @@
 }
 
 .sendButton:hover {
-  color: rgb(0, 255, 0);
+  color: orange;
   background-color: rgba(0, 0, 0, 0.193);
   transition: smooth;
 }
