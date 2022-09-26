@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./App.css";
 import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer/Footer";
@@ -7,21 +8,23 @@ import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-header">
-        <Header />
-      </div>
-      <div className="App-body">
-        <div className="App-row">
-          <Navigation />
-          <Messages />
-          <Contacts />
+    <Router>
+      <div className="App">
+        <div className="App-header">
+          <Header />
+        </div>
+        <div className="App-body">
+          <div className="App-row">
+            <Navigation />
+            <Messages />
+            <Contacts />
+          </div>
+        </div>
+        <div className="App-footer">
+          <Footer />
         </div>
       </div>
-      <div className="App-footer">
-        <Footer />
-      </div>
-    </div>
+    </Router>
   );
 }
 

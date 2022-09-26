@@ -19,9 +19,15 @@ const Messages: React.FC = () => {
   const [error, setError] = useState<string | undefined>();
   const bottomRef = useRef<null | HTMLDivElement>(null);
 
+  const scrollDown = () => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   useEffect(() => {
     fetchMessages()
       .then(setMessages)
+      delay(100)
+      .then(scrollDown)
       .catch((error) => {
         setMessages([]);
         setError("Error fetching messages");
