@@ -18,7 +18,7 @@ const Header = () => {
       <div className="headerContent">
         <div className="logoContent">
           <img className="logo" src={logo}></img>
-          <h1>ChatApp</h1>
+          <h1>ChatR</h1>
         </div>
         <div className="loginContent">
           <a href="/login">Login</a>
