@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// Service for different forms of authentication
+
 const API_URL = "http://localhost:4000/api/auth";
 
 class AuthService {
@@ -31,8 +33,8 @@ class AuthService {
   }
 
   getCurrentUser() {
-    const user = localStorage.getItem("user");
-    if (user) return JSON.parse(user);
+    const userString = localStorage.getItem("user");
+    if (userString) return JSON.parse(userString);
 
     return null;
   }
