@@ -53,6 +53,7 @@ li {
 }
 
 a {
+  transition: 0.3s;
   color: lightgray;
 }
 
@@ -81,16 +82,22 @@ a:hover {
 }
 
 .messageBubble {
+  transition: 0.3s;
+  padding: 10px;
   background-color: #282c34;
-  border: 1px solid gray;
   border-radius: 5px;
-  margin: 10px;
+  margin: 15px;
+  box-shadow: 0 5px #00000025;
+}
+
+.messageBubble:hover {
+  background-color: #2d313b;
 }
 
 .textContainer {
   position: fixed;
-  width: 44%;
-  left: 55.2%;
+  width: 42%;
+  left: 56%;
   top: 91%;
   margin-left: -25%;
   z-index: 1000;
@@ -98,13 +105,16 @@ a:hover {
 
 .writeField {
   background-color: #282c34;
+  border-radius: 5px;
   width: 90%;
   display: flex;
   font-size: 18px;
+  box-shadow: 0 5px #00000025;
 }
 
 .textInput {
   background-color: transparent;
+  transition: 0.3s;
   margin: 0;
   width: 80%;
   padding-left: 20px;
@@ -116,8 +126,15 @@ a:hover {
 	outline: inherit;
 }
 
+.textInput:focus {
+  background-color: rgba(0, 0, 0, 0.193);
+}
+
+
 .sendButton {
+  transition: 0.3s;
   width: 20%;
+  border-radius: 5px;
   background: none;
 	color: inherit;
 	border: none;
@@ -128,8 +145,6 @@ a:hover {
 
 .sendButton:hover {
   color: orange;
-  background-color: rgba(0, 0, 0, 0.193);
-  transition: smooth;
 }
 
 

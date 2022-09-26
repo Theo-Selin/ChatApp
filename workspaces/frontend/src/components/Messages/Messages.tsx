@@ -8,8 +8,8 @@ import Bubble from "./Bubble";
 const Container = styled.div`
   background-color: rgb(33, 33, 41);
   overflow: scroll;
-  border-left: 1px solid grey;
-  border-right: 1px solid grey;
+  border-left: 1px solid rgb(41, 41, 47);
+  border-right: 1px solid rgb(41, 41, 47);
   height: 80vh;
   width: 100%;
 `;

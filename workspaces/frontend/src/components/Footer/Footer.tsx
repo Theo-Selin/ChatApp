@@ -7,7 +7,7 @@ const Container = styled.div`
   left: 10%;
   height: 130px;
   bottom: 0;
-  border: 1px solid gray;
+  border: 1px solid rgb(41, 41, 47);
   background-color: rgb(23, 23, 28);
   color: white;
 `;
