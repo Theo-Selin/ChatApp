@@ -37,8 +37,28 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-left: 5%;
   height: 100%;
+  width: 100%;
+}
+
+.logoContent {
+  display: flex;
+  margin-left: 5%;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  left: 10px;
+  padding-right: 10px;
+}
+
+.loginContent {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 63%;
 }
 
 .navItems, .navOptions, .chatGroups {
@@ -55,17 +75,11 @@ li {
 a {
   transition: 0.3s;
   color: lightgray;
+  cursor: pointer;
 }
 
 a:hover {
   color: orange;
-}
-
-.logo {
-  width: 60px;
-  height: 60px;
-  left: 10px;
-  margin-right: 1%;
 }
 
 .Messages {

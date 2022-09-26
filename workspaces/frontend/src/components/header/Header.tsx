@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "./assets/logo.png"
+import logo from "./assets/logo.png";
 
 const Container = styled.div`
   position: fixed;
@@ -14,13 +14,18 @@ const Container = styled.div`
 
 const Header = () => {
   return (
-  <Container>
-    <div className="headerContent">
-      <img className="logo" src={logo}></img>
-      <h1>ChatApp</h1>
-    </div>
-  </Container>
-  )
+    <Container>
+      <div className="headerContent">
+        <div className="logoContent">
+          <img className="logo" src={logo}></img>
+          <h1>ChatApp</h1>
+        </div>
+        <div className="loginContent">
+          <a>Login</a>
+        </div>
+      </div>
+    </Container>
+  );
 };
 
 export default Header;

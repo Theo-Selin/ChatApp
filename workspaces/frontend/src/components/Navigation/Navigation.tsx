@@ -6,7 +6,7 @@ const Container = styled.div`
   border-left: 1px solid rgb(41, 41, 47);
   background-color: rgb(33, 33, 41);
   height: 80vh;
-  width: 50%;
+  width: 15%;
 `;
 
 const Navigation = () => {
