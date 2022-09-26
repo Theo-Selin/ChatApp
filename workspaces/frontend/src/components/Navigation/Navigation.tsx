@@ -21,7 +21,7 @@ const Navigation = () => {
         </ul>
         <br />
         <ul className="chatGroups">
-          <p>Groups</p>
+          <p>G</p>
           <li></li>
         </ul>
       </div>

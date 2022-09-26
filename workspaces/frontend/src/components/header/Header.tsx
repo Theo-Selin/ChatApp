@@ -21,7 +21,7 @@ const Header = () => {
           <h1>ChatApp</h1>
         </div>
         <div className="loginContent">
-          <a>Login</a>
+          <a href="/login">Login</a>
         </div>
       </div>
     </Container>

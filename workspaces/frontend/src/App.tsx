@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Contacts from "./components/Contacts/Contacts";
 import Footer from "./components/Footer/Footer";
@@ -8,7 +8,6 @@ import Navigation from "./components/Navigation/Navigation";
 
 function App() {
   return (
-    <Router>
       <div className="App">
         <div className="App-header">
           <Header />
@@ -24,7 +23,6 @@ function App() {
           <Footer />
         </div>
       </div>
-    </Router>
   );
 }
 

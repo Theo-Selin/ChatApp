@@ -31,7 +31,7 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
   return (
     <div className="textContainer">
       <section className="writeField">
-        <textarea className="textInput"
+        <textarea placeholder="Send a message to your friends" className="textInput"
           value={messageText}
           onChange={(e) => setMessageText(e.target.value)}
         />

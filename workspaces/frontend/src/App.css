@@ -48,7 +48,7 @@
 }
 
 .logo {
-  width: 60px;
+  width: 70px;
   height: 60px;
   left: 10px;
   padding-right: 10px;
@@ -139,11 +139,6 @@ a:hover {
 	font: inherit;
 	outline: inherit;
 }
-
-.textInput:focus {
-  background-color: rgba(0, 0, 0, 0.193);
-}
-
 
 .sendButton {
   transition: 0.3s;
