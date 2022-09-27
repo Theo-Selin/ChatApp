@@ -6,7 +6,7 @@ const Container = styled.div`
   position: fixed;
   width: 79.9%;
   left: 10%;
-  height: 130px;
+  height: 100px;
   border: 1px solid rgb(41, 41, 47);
   background-color: rgb(23, 23, 28);
   color: white;
@@ -17,7 +17,7 @@ const Header = () => {
     <Container>
       <div className="headerContent">
         <div className="logoContent">
-          <img className="logo" src={logo}></img>
+          <img className="logo" src={logo} alt="logo"></img>
           <h1>ChatR</h1>
         </div>
         <div className="loginContent">
