@@ -13,6 +13,7 @@
     "./workspaces/*"
   ],
   "dependencies": {
-    "backend": "^1.0.0"
+    "backend": "^1.0.0",
+    "moment": "^2.29.4"
   }
 }

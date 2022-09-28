@@ -1,4 +1,5 @@
 import Message from "@chatapp/shared";
+import moment from "moment";
 import React, { useRef } from "react";
 
 type Props = {
@@ -18,6 +19,7 @@ const Bubble: React.FC<Props> = ({ messages, error, bottomRef }) => {
             <div key="">
               <div className="messageBubble">
                 <p className="message">{item.text}</p>
+                <p className="timeStamp">{moment(item.timeStamp).format("MMMM Do YYYY, h:mm")}</p>
               </div>
               <div />
               <div ref={bottomRef} />

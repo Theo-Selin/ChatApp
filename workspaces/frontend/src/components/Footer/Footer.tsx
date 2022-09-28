@@ -5,8 +5,8 @@ const Container = styled.div`
   position: fixed;
   width: 80.1%;
   left: 10%;
-  height: 100px;
-  bottom: 0;
+  height: 110px;
+  bottom: 2%;
   border: 1px solid rgb(41, 41, 47);
   background-color: rgb(23, 23, 28);
   color: white;
