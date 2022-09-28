@@ -15,11 +15,10 @@ const Bubble: React.FC<Props> = ({ messages, error, bottomRef }) => {
       <>
         {messages.map((item) => {
           return (
-            <div key={item.id} className="messageBubble">
-              <div>
+            <div key="">
+              <div className="messageBubble">
                 <p className="message">{item.text}</p>
               </div>
-              <p className="timeStamp">{item.timeStamp.toString()}</p>
               <div />
               <div ref={bottomRef} />
             </div>
