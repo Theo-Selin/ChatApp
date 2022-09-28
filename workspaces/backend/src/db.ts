@@ -3,7 +3,7 @@ import Message from "@chatapp/shared"
 
 const MessageSchema = new Schema({
     text: String,
-    timestamp: Date
+    timeStamp: Date
 })
 
 const MessageModel = model<Message>("Message", MessageSchema)
