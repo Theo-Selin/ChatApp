@@ -16,7 +16,7 @@ const Bubble: React.FC<Props> = ({ messages, error, bottomRef }) => {
       <>
         {messages.map((item) => {
           return (
-            <div key="">
+            <div key={item._id}>
               <div className="messageBubble">
                 <p className="message">{item.text}</p>
                 <p className="timeStamp">{moment(item.timeStamp).format("MMMM Do YYYY, h:mm")}</p>
