@@ -1,5 +1,5 @@
-import Credentials from "./credentials";
+import User from "./user";
 import Message from "./message";
 import { TokenPayload, JwtRequest } from "./jwt";
 
-export { Credentials, Message, TokenPayload, JwtRequest }
+export { User, Message, TokenPayload, JwtRequest }
