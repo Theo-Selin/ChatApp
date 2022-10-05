@@ -1,6 +1,6 @@
-import Message from "@chatapp/shared"
+import { Message } from "@chatapp/shared"
 import express, { Request, Response, Router } from "express"
-import { loadAllMessages, saveMessageItem } from "../models/messageRepo"
+import { loadAllMessages, saveMessageItem } from "../services/messagesService"
 
 const messagesRouter = express.Router()
 
