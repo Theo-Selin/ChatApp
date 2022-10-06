@@ -2,8 +2,8 @@ import express, { Application, json, Request, Response } from "express"
 import cors from "cors"
 import dotenv from "dotenv"
 import messagesRouter from "./routes/messagesRoutes"
-import authRouter from "./routes/authRoutes"
 import { connect } from "mongoose"
+import usersRouter from "./routes/authRoutes"
 
 dotenv.config()
 
@@ -18,7 +18,8 @@ export const setupMongoDb = async (url: string) => {
 }
 
 app.use("/messages", messagesRouter)
-app.use("/signup", authRouter)
+app.use("/login", usersRouter)
+app.use("/register", usersRouter)
 
 app.listen(port, async function () {
     await setupMongoDb(mongoUrl)
