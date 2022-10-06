@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import Message from "@chatapp/shared";
+import { Message } from "@chatapp/shared";
 import styled from "styled-components";
 import Send from "./Send";
 import { delay, fetchMessages } from "./utils";
@@ -24,9 +24,8 @@ const Messages: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchMessages()
-      .then(setMessages)
-      delay(100)
+    fetchMessages().then(setMessages);
+    delay(100)
       .then(scrollDown)
       .catch((error) => {
         setMessages([]);

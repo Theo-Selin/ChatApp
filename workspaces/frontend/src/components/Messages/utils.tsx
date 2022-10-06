@@ -1,4 +1,4 @@
-import Message from "@chatapp/shared";
+import { Message } from "@chatapp/shared";
 import axios from "axios";
 
 axios.defaults.baseURL =
