@@ -3,6 +3,7 @@ import cors from "cors"
 import dotenv from "dotenv"
 import messagesRouter from "./routes/messagesRoutes"
 import { connect } from "mongoose"
+import { loginUser } from "./services/authServices"
 
 dotenv.config()
 
@@ -16,6 +17,7 @@ export const setupMongoDb = async (url: string) => {
     await connect(url)
 }
 
+app.post("/login", loginUser)
 app.use("/messages", messagesRouter)
 
 app.listen(port, async function () {
