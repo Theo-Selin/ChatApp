@@ -1,3 +1,2 @@
-import type Message from "./message";
-
-export type { Message }
+export { Credentials } from "./credentials";
+export { Message } from "./message";
