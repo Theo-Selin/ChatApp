@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Send from "./Send";
 import { delay, fetchMessages } from "./utils";
 import Bubble from "./Bubble";
+import Login from "../Login/Login";
 
 const Container = styled.div`
   background-color: rgb(33, 33, 41);
@@ -36,6 +37,7 @@ const Messages: React.FC = () => {
   return (
     <>
       <Container className="messageContainer">
+        <Login setError={setError} setMessages={setMessages} />
         <Bubble error={error} messages={messages} bottomRef={bottomRef} />
         <Send setMessages={setMessages} bottomRef={bottomRef} />
       </Container>

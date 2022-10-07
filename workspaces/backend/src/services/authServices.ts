@@ -1,7 +1,7 @@
 import { Credentials } from "@chatapp/shared";
 import { NextFunction, Request, Response } from "express";
 import jsonwebtoken from "jsonwebtoken";
-import { loadUserByUsername, UserInfo } from "../models/userRepo";
+import { User, UserModel } from "../models/userRepo";
 
 const secret: string = process.env.TOKEN_SECRET || "f9daa8f6d2907e86f8dc8b741";
 const JWT_COOKIE_NAME = "jwt";
@@ -45,6 +45,7 @@ export const loginUser = async (
 
     const userInfo = await performUserAuthentication(credentials);
     if (!userInfo) {
+        console.log(userInfo)
         return res.sendStatus(403);
     }
 
@@ -60,8 +61,12 @@ export const loginUser = async (
 
 const performUserAuthentication = async (
     credentials: Credentials
-): Promise<UserInfo | null> => {
+): Promise<User | null> => {
     const userInfo = await loadUserByUsername(credentials.username);
     // TODO Use bcrypt to check that password is maching
     return userInfo;
 };
+
+export const loadUserByUsername = async (username: string): Promise<User | null> => {
+    return await UserModel.findOne({ username: username }).exec()
+}
