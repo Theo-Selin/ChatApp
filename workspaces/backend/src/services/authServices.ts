@@ -4,7 +4,6 @@ import jsonwebtoken from "jsonwebtoken";
 import { User, UserModel } from "../models/userRepo";
 
 const secret: string = process.env.TOKEN_SECRET || "f9daa8f6d2907e86f8dc8b741";
-const JWT_COOKIE_NAME = "jwt";
 
 export type TokenPayload = {
     sub: string;
@@ -27,6 +26,7 @@ export const authenticateToken = (
         try {
             const decoded = jsonwebtoken.verify(token, secret) as TokenPayload;
             req.jwt = decoded;
+            console.log(token)
         } catch (err) {
             return res.sendStatus(403); // Bad token!
         }
@@ -45,7 +45,6 @@ export const loginUser = async (
 
     const userInfo = await performUserAuthentication(credentials);
     if (!userInfo) {
-        console.log(userInfo)
         return res.sendStatus(403);
     }
 
@@ -55,8 +54,7 @@ export const loginUser = async (
         secret,
         { expiresIn: "1800s" }
     );
-    res.send(token);
-    return res.sendStatus(200);
+    return res.send(token);
 };
 
 const performUserAuthentication = async (

@@ -18,8 +18,7 @@ export const setupMongoDb = async (url: string) => {
 }
 
 app.post("/login", loginUser)
-app.use("/messages", authenticateToken)
-app.use("/messages", messagesRouter)
+app.use("/messages", authenticateToken, messagesRouter)
 
 app.listen(port, async function () {
     await setupMongoDb(mongoUrl)

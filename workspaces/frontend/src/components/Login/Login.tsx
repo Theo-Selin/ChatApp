@@ -30,7 +30,7 @@ const Login: React.FC<Props> = ({ setMessages, setError }) => {
   return (
     <div>
       <section className="App-content">
-        {!isLoggedIn ? <LoginInput onLogin={performLogin} /> : <></>}
+        {!isLoggedIn ? <LoginInput onLogin={performLogin} /> : <div></div>}
       </section>
     </div>
   );
