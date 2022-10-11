@@ -1,16 +1,15 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Message } from "@chatapp/shared";
 import { LoginInput } from "./LoginInputs";
 
 type Props = {
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
   setError: React.Dispatch<React.SetStateAction<string | undefined>>;
+  setLoggedIn: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Login: React.FC<Props> = ({ setMessages, setError }) => {
-  const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
-
+const Login: React.FC<Props> = ({ setMessages, setError, setLoggedIn }) => {
   const performLogin = async (
     username: string,
     password: string
@@ -21,19 +20,13 @@ const Login: React.FC<Props> = ({ setMessages, setError }) => {
     });
     if (loginResponse && loginResponse.status === 200) {
       localStorage.setItem("jwt", loginResponse.data);
-      setLoggedIn(true);
       setError("");
       const response = await axios.get<Message[]>("/messages");
       setMessages(response.data);
+      setLoggedIn(true);
     }
   };
-  return (
-    <div>
-      <section className="App-content">
-        {!isLoggedIn ? <LoginInput onLogin={performLogin} /> : <div></div>}
-      </section>
-    </div>
-  );
+  return <LoginInput onLogin={performLogin} />;
 };
 
 export default Login;

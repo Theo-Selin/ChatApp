@@ -26,12 +26,11 @@ export const authenticateToken = (
         try {
             const decoded = jsonwebtoken.verify(token, secret) as TokenPayload;
             req.jwt = decoded;
-            console.log(token)
         } catch (err) {
-            return res.sendStatus(403); // Bad token!
+            return res.sendStatus(403);
         }
     } else {
-        return res.sendStatus(401); // No token! Unauthorized!
+        return res.sendStatus(401);
     }
 
     next();

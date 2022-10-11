@@ -19,6 +19,7 @@ const Messages: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [error, setError] = useState<string | undefined>();
   const bottomRef = useRef<null | HTMLDivElement>(null);
+  const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
 
   const scrollDown = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -37,8 +38,16 @@ const Messages: React.FC = () => {
   return (
     <>
       <Container className="messageContainer">
-        <Login setError={setError} setMessages={setMessages} />
-        <Bubble error={error} messages={messages} bottomRef={bottomRef} />
+        {isLoggedIn ? (
+          <Bubble error={error} messages={messages} bottomRef={bottomRef} />
+        ) : (
+          <Login
+            setMessages={setMessages}
+            setError={setError}
+            setLoggedIn={setLoggedIn}
+          />
+        )}
+
         <Send setMessages={setMessages} bottomRef={bottomRef} />
       </Container>
     </>

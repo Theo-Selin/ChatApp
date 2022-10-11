@@ -17,24 +17,26 @@ export const LoginInput = (props: LoginInputProps) => {
 
   return (
     <div className="loginForm">
-      <div>
-        Username:{" "}
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        Password:{" "}
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <div>
-        <button onClick={attemptLogin}>Login</button>
+      <div className="inputFields">
+        <div>
+          Username:{" "}
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div>
+          Password:{" "}
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <div>
+          <button onClick={attemptLogin}>Login</button>
+        </div>
       </div>
     </div>
   );

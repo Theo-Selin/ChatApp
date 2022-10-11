@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Login from "../Login/Login";
 import logo from "./assets/logo.png";
 
 const Container = styled.div`
@@ -21,9 +22,7 @@ const Header = () => {
           <img className="logo" src={logo} alt="logo"></img>
           <h1>ChatR</h1>
         </div>
-        <div className="loginContent">
-          <a href="/login">Login</a>
-        </div>
+        <div className="loginContent"></div>
       </div>
     </Container>
   );
