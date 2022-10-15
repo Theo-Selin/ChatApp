@@ -109,27 +109,63 @@ a:hover {
 
 .timeStamp {
   font-size: 12px;
-  color: gray;
+  color: white;
+  opacity: 50%;
   cursor: default;
   margin-bottom: 0;
 }
-.timeStamp:hover {
-  font-size: 12px;
-  color: orange;
-}
 
 .messageBubble {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  opacity: 80%;
   transition: 0.3s;
-  padding: 10px;
-  background-color: #282c34;
-  border-radius: 5px;
-  margin: 15px;
-  margin-bottom: 0;
-  box-shadow: 0 5px #00000025;
 }
 
 .messageBubble:hover {
-  background-color: #2d313b;
+  opacity: 100%;
+  background-color: rgba(0, 0, 0, 0.052);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.103);
+}
+
+.userBubble {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 2% 2% 2% 10%;
+}
+
+.otherBubble {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  padding: 2% 2% 2% 10%;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.user {
+  margin: 0;
+  color: orange;
+  font-weight: 300;
+}
+
+.user:hover {
+  text-decoration: none;
+}
+
+.other:hover {
+  text-decoration: none;
+}
+
+.other {
+  margin: 0;
+  font-weight: 300;
+  color: rgb(44, 128, 255);
 }
 
 .textContainer {
