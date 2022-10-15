@@ -1,8 +1,8 @@
-import { Message } from "@chatapp/shared";
+import { Message, TokenPayload } from "@chatapp/shared";
 import axios from "axios";
 import React, { useState } from "react";
 import { delay } from "./utils";
-import jwt from "jsonwebtoken";
+import jwt_decode from "jwt-decode";
 
 type Props = {
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
@@ -17,9 +17,12 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
   };
 
   const createMessage = (messageText: string): void => {
+    const token: string | null = localStorage.getItem("jwt");
+    const decoded: TokenPayload = jwt_decode(token!);
     const message: Message = {
       text: messageText,
       timeStamp: new Date(),
+      user: decoded.sub,
     };
     axios
       .post<Message[]>("/messages", message)

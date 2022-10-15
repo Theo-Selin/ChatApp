@@ -16,6 +16,7 @@ messagesRouter.post("/", async (req: JwtRequest<Message>, res: Response<Message[
         const token = req.jwt
         if (!token) throw new Error('Missing JWT!')
         res.send(await saveMessage(req.body, token?.sub));
+        console.log(req.body)
     } catch (e) {
         res.sendStatus(400)
     }

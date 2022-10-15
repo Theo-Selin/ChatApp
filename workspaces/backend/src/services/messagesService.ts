@@ -1,5 +1,6 @@
 import { Message } from "@chatapp/shared";
 import { MessageModel } from "../models/messageRepo";
+import { loadUserByUsername } from "./authServices";
 
 // GET messages
 export const loadAllMessages = async (): Promise<Message[]> => {
@@ -23,7 +24,11 @@ export const loadMessageById = async (messageID: string): Promise<Message> => {
 
 // POST messages
 export const saveMessageItem = async (message: Message): Promise<void> => {
-    const textModel = new MessageModel(message)
+    const textModel = new MessageModel({
+        text: message.text,
+        user: message.user,
+        timeStamp: message.timeStamp
+    })
     textModel.save()
 }
 
@@ -31,7 +36,6 @@ export const saveMessage = async (message: Message, user: string): Promise<Messa
     if (!message.text || message.text == "") {
         throw new Error("Invalid text in the message")
     }
-    message.timeStamp = new Date()
 
     await saveMessageItem(message)
 
