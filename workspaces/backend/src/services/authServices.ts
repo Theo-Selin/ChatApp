@@ -49,16 +49,14 @@ export const loginUser = async (
         await userInfo.save()
         const token = jsonwebtoken.sign(
             { sub: userInfo.username },
-            secret,
-            { expiresIn: "1800s" }
+            secret
         );
         return res.send(token);
     }
 
     const token = jsonwebtoken.sign(
         { sub: userInfo.username },
-        secret,
-        { expiresIn: "1800s" }
+        secret
     );
     return res.send(token);
 };

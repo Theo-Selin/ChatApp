@@ -24,13 +24,16 @@ const Messages: React.FC = () => {
   };
 
   useEffect(() => {
-    fetchMessages().then(setMessages);
-    delay(100)
-      .then(scrollDown)
-      .catch((error) => {
-        setMessages([]);
-        setError("Error fetching messages");
-      });
+    const interval = setInterval(() => {
+      fetchMessages().then(setMessages);
+      delay(100)
+        .then(scrollDown)
+        .catch((error) => {
+          setMessages([]);
+          setError("Error fetching messages");
+        });
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
