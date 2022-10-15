@@ -2,6 +2,7 @@ import { Message } from "@chatapp/shared";
 import axios from "axios";
 import React, { useState } from "react";
 import { delay } from "./utils";
+import jwt from "jsonwebtoken";
 
 type Props = {
   setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
@@ -10,7 +11,6 @@ type Props = {
 
 const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
   const [messageText, setMessageText] = useState("");
-  const [username, setUsername] = useState("");
 
   const scrollDown = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -20,7 +20,6 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
     const message: Message = {
       text: messageText,
       timeStamp: new Date(),
-      user: username,
     };
     axios
       .post<Message[]>("/messages", message)

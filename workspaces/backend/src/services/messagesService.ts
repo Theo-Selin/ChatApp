@@ -26,7 +26,8 @@ export const saveMessageItem = async (message: Message): Promise<void> => {
     const textModel = new MessageModel(message)
     textModel.save()
 }
-export const saveMessage = async (message: Message): Promise<Message[]> => {
+
+export const saveMessage = async (message: Message, user: string): Promise<Message[]> => {
     if (!message.text || message.text == "") {
         throw new Error("Invalid text in the message")
     }
