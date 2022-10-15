@@ -1,6 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import {AiFillHome, AiFillBell, AiOutlineUser, AiOutlineLogout} from "react-icons/ai"
+import {
+  AiFillHome,
+  AiFillBell,
+  AiOutlineUser,
+  AiOutlineLogout,
+} from "react-icons/ai";
 
 const Container = styled.div`
   background-color: rgb(33, 33, 41);
@@ -13,10 +18,26 @@ const Navigation = () => {
     <Container>
       <div className="navItems">
         <ul className="navOptions">
-          <li><a href="/"><AiFillHome /></a></li>
-          <li><a href="/"><AiFillBell /></a></li>
-          <li><a href="/"><AiOutlineUser /></a></li>
-          <li><a href="/"><AiOutlineLogout /></a></li>
+          <li>
+            <a href="/">
+              <AiFillHome />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <AiFillBell />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <AiOutlineUser />
+            </a>
+          </li>
+          <li>
+            <a href="/">
+              <AiOutlineLogout />
+            </a>
+          </li>
         </ul>
         <br />
         <ul className="chatGroups">
