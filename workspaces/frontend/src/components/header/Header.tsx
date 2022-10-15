@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Login from "../Login/Login";
 import logo from "./assets/logo.png";
 
 const Container = styled.div`

@@ -10,13 +10,9 @@ type Props = {
 };
 
 const Login: React.FC<Props> = ({ setMessages, setError, setLoggedIn }) => {
-  const performLogin = async (
-    username: string,
-    password: string
-  ): Promise<void> => {
+  const performLogin = async (username: string): Promise<void> => {
     const loginResponse = await axios.post("/login", {
       username: username,
-      password: password,
     });
     if (loginResponse && loginResponse.status === 200) {
       localStorage.setItem("jwt", loginResponse.data);

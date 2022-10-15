@@ -60,7 +60,6 @@ const performUserAuthentication = async (
     credentials: Credentials
 ): Promise<User | null> => {
     const userInfo = await loadUserByUsername(credentials.username);
-    // TODO Use bcrypt to check that password is maching
     return userInfo;
 };
 

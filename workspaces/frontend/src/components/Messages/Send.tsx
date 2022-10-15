@@ -10,6 +10,7 @@ type Props = {
 
 const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
   const [messageText, setMessageText] = useState("");
+  const [username, setUsername] = useState("");
 
   const scrollDown = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -19,6 +20,7 @@ const Send: React.FC<Props> = ({ setMessages, bottomRef }) => {
     const message: Message = {
       text: messageText,
       timeStamp: new Date(),
+      user: username,
     };
     axios
       .post<Message[]>("/messages", message)

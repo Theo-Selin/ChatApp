@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Message } from "@chatapp/shared";
 import styled from "styled-components";
-import Send from "./Send";
-import { delay, fetchMessages } from "./utils";
 import Bubble from "./Bubble";
-import Login from "../Login/Login";
+import Send from "./Send";
+import { fetchMessages, delay } from "./utils";
 
 const Container = styled.div`
   background-color: rgb(33, 33, 41);
@@ -19,7 +18,6 @@ const Messages: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [error, setError] = useState<string | undefined>();
   const bottomRef = useRef<null | HTMLDivElement>(null);
-  const [isLoggedIn, setLoggedIn] = useState<boolean>(false);
 
   const scrollDown = () => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -38,16 +36,7 @@ const Messages: React.FC = () => {
   return (
     <>
       <Container className="messageContainer">
-        {isLoggedIn ? (
-          <Bubble error={error} messages={messages} bottomRef={bottomRef} />
-        ) : (
-          <Login
-            setMessages={setMessages}
-            setError={setError}
-            setLoggedIn={setLoggedIn}
-          />
-        )}
-
+        <Bubble error={error} messages={messages} bottomRef={bottomRef} />
         <Send setMessages={setMessages} bottomRef={bottomRef} />
       </Container>
     </>
