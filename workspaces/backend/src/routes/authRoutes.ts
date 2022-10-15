@@ -1,8 +1,8 @@
 import express, { Request, Response, Router } from "express"
 import { loginUser } from "../services/authServices"
 
-const loginRouter = express.Router()
+const authRouter = express.Router()
 
-loginRouter.post("/", loginUser)
+authRouter.post("/", loginUser)
 
-export default loginRouter
+export default authRouter

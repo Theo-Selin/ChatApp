@@ -9,7 +9,7 @@ export const LoginInput = (props: LoginInputProps) => {
 
   const attemptLogin = async () => {
     props.onLogin(username);
-    setUsername(username);
+    setUsername(username); // Not neccessary?
   };
 
   return (

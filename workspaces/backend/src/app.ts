@@ -17,10 +17,10 @@ export const setupMongoDb = async (url: string) => {
 }
 
 import messagesRouter from "./routes/messagesRoutes"
-import loginRouter from "./routes/loginRoutes"
+import authRouter from "./routes/authRoutes"
 
 app.use("/messages", authenticateToken, messagesRouter)
-app.use("/login", loginRouter)
+app.use("/login", authRouter)
 
 app.listen(port, async function () {
     await setupMongoDb(mongoUrl)

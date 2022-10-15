@@ -44,12 +44,19 @@ export const loginUser = async (
 
     const userInfo = await performUserAuthentication(credentials);
     if (!userInfo) {
-        return res.sendStatus(403);
+        // Create a new user if it doesn't exist
+        const userInfo = new UserModel(credentials)
+        await userInfo.save()
+        const token = jsonwebtoken.sign(
+            { sub: userInfo.username },
+            secret,
+            { expiresIn: "1800s" }
+        );
+        return res.send(token);
     }
 
-    console.log("Got credentials:", credentials);
     const token = jsonwebtoken.sign(
-        { sub: userInfo.username, name: userInfo.name, roles: userInfo.roles },
+        { sub: userInfo.username },
         secret,
         { expiresIn: "1800s" }
     );
