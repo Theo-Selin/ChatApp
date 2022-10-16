@@ -71,3 +71,7 @@ const performUserAuthentication = async (
 export const loadUserByUsername = async (username: string): Promise<User | null> => {
     return await UserModel.findOne({ username: username }).exec()
 }
+
+export const getAllUsers = async (): Promise<User[]> => {
+    return await UserModel.find().exec()
+}

@@ -79,6 +79,7 @@ a {
 }
 
 a:hover {
+  text-decoration: none;
   color: orange;
 }
 
@@ -166,6 +167,11 @@ a:hover {
   margin: 0;
   font-weight: 300;
   color: rgb(44, 128, 255);
+}
+
+.usersHeader {
+  margin-top: 25px;
+  color: orange;
 }
 
 .textContainer {
