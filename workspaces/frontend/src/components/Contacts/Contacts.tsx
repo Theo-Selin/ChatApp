@@ -4,7 +4,8 @@ import styled from "styled-components";
 import { fetchUsers } from "./utils";
 
 const Container = styled.div`
-  background-color: rgb(33, 33, 41);
+  background-color: rgb(23, 23, 28);
+  overflow: scroll;
   height: 80vh;
   width: 25%;
 `;
@@ -17,17 +18,19 @@ const Contacts = () => {
   }, []);
 
   return (
-    <Container>
-      <p className="usersHeader">Created users:</p>
-      {users &&
-        users.map((user) => {
-          return (
-            <div key={user._id}>
-              <a className="username">{user.username}</a>
-            </div>
-          );
-        })}
-    </Container>
+    <>
+      <Container>
+        <div className="usersHeader">Created users:</div>
+        {users &&
+          users.map((user) => {
+            return (
+              <div className="username" key={user._id}>
+                <a>{user.username}</a>
+              </div>
+            );
+          })}
+      </Container>
+    </>
   );
 };
 
