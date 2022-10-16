@@ -19,7 +19,7 @@ const Header = () => {
       <div className="headerContent">
         <div className="logoContent">
           <img className="logo" src={logo} alt="logo"></img>
-          <h1>ChatR</h1>
+          <h1>ANY1</h1>
         </div>
         <div className="loginContent"></div>
       </div>

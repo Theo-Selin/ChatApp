@@ -54,13 +54,6 @@
   padding-right: 10px;
 }
 
-.loginContent {
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding-left: 63%;
-}
-
 .navItems, .navOptions, .chatGroups {
   list-style-type: none; 
   font-size: 30px;
@@ -96,16 +89,39 @@ a:hover {
 
 .loginForm {
   display: flex;
-  flex-direction: column;
   margin: auto;
-  width: 500px;
-  padding: 10%;
-  margin-top: 10%;
+  width: 100%;
+  background-color:#1f2229;
+  padding: 100px;
+}
+
+.loginHeader {
+  margin-top: 50px;
 }
 
 .inputFields {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 25px;
 }
 
 .timeStamp {
@@ -133,15 +149,15 @@ a:hover {
 .userBubble {
   display: flex;
   flex-direction: column;
-  text-align: start;
-  padding: 2% 2% 2% 10%;
+  text-align: end;
+  padding: 2% 2% 2% 2%;
 }
 
 .otherBubble {
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 2% 2% 2% 10%;
+  padding: 2% 2% 2% 2%;
 }
 
 .messageContainer {
@@ -221,8 +237,6 @@ a:hover {
 .sendButton:hover {
   color: orange;
 }
-
-
 
 @keyframes App-logo-spin {
   from {
