@@ -43,15 +43,14 @@ export const loginUser = async (
     const credentials = req.body;
 
     const userInfo = await performUserAuthentication(credentials);
+
     if (!userInfo) {
         // Create a new user if it doesn't exist
         const userInfo = new UserModel(credentials)
         await userInfo.save()
-        const token = jsonwebtoken.sign(
-            { sub: userInfo.username },
-            secret
-        );
-        return res.send(token);
+        return res.sendStatus(201)
+    } else if (userInfo.username === "") {
+        return res.sendStatus(204)
     }
 
     const token = jsonwebtoken.sign(

@@ -38,11 +38,6 @@ export const LoginInput = (props: LoginInputProps) => {
         <a className="button" onClick={attemptLogin}>
           Enter
         </a>
-        <h3 className="loginHeader">Be whoever you want!</h3>
-        <p className="loginHeader">
-          Act as one of the created users to the right or create your own
-          identity. We really mean it when we say ANY1.
-        </p>
       </div>
     </Container>
   );

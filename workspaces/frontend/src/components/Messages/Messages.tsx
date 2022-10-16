@@ -32,7 +32,7 @@ const Messages: React.FC = () => {
           setMessages([]);
           setError("Error fetching messages");
         });
-    }, 5000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
