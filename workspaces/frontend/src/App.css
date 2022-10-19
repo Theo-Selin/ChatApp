@@ -158,14 +158,14 @@ a:hover {
   display: flex;
   flex-direction: column;
   text-align: end;
-  padding: 2% 2% 2% 2%;
+  padding: 10px 2% 10px 2%;
 }
 
 .otherBubble {
   display: flex;
   flex-direction: column;
   text-align: start;
-  padding: 2% 2% 2% 2%;
+  padding: 10px 2% 10px 2%;
 }
 
 .messageContainer {
@@ -177,7 +177,7 @@ a:hover {
   margin: 0;
   color: #f07e20;
   font-weight: 300;
-  font-size: 20px
+  font-size: 18px
 }
 
 .user:hover {
@@ -192,7 +192,7 @@ a:hover {
   margin: 0;
   font-weight: 300;
   color: rgb(44, 128, 255);
-  font-size: 20px
+  font-size: 18px
 }
 
 .textContainer {
@@ -248,8 +248,7 @@ a:hover {
 
 .usersHeader {
   background-color: #f07e20;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.103);
-  top: 0;
+  top: 4px;
   position: sticky;
   padding-top: 10px;
   padding-bottom: 10px;
