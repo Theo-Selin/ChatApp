@@ -1,0 +1,21 @@
+FROM node:16-alpine
+
+WORKDIR /usr/src/app
+
+COPY ./package*.json ./
+COPY ./workspaces/frontend/package*.json ./workspaces/frontend/
+COPY ./workspaces/shared/package*.json ./workspaces/shared/
+
+RUN npm ci -w workspaces/frontend
+
+COPY ./workspaces/frontend/ ./workspaces/frontend/
+COPY ./workspaces/shared/ ./workspaces/shared/
+
+ARG MESSAGE_API
+ENV REACT_APP_MESSAGE_API=${MESSAGE_API}
+
+RUN npm run build -w workspaces/frontend
+
+EXPOSE 3000
+
+CMD [ "npx", "serve", "workspaces/frontend/build" ]

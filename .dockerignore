@@ -1,0 +1,5 @@
+workspaces/frontend/node_modules
+workspaces/frontend/build
+workspaces/backend/node_modules
+workspaces/backend/dist
+node_modules
