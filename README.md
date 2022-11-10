@@ -16,4 +16,4 @@ In order to get the most out of it, it's recommended to have two browsers open. 
 possibility to chat with yourself and to fully experience the application. You can also simply remove the token from your local storage and
 you'll be redirected to pick another name.
 
-![image](https://user-images.githubusercontent.com/90902429/201171130-a07730f1-6272-4326-b520-6721c191ac25.png)
+![image](https://user-images.githubusercontent.com/90902429/201172435-d982601e-63a9-4ff4-97fa-33d852b23e96.png)
